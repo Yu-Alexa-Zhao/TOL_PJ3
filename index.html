@@ -1,0 +1,431 @@
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+
+  <title>How AC Works</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,500,600,700&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
+  <link rel='stylesheet' href='css/style.css'>
+
+</head>
+
+<body>
+
+  <!--Enter your name-->
+  <div class='changing_frame' id = 'name_enter'>
+    <div class='title-mid'>
+      <h1>Welcome to</h1>
+      <h1>How Air Conditioner works</h1>
+    </div>
+
+    <div class='name_parent flex_parent_column'>
+      <p class='p1 center_children'>Enter your name here:</p>
+      <input type='text' name='name' class='input_box center_children_div' id = 'name_input'>
+    </div>
+
+    <div class='flex_parent margin_top_34'>
+      <button onclick='to_topic()' class='main-btn'><span>Next</span></button>
+    </div>
+
+  </div>
+
+  <!--Learning topics-->
+  <div class='changing_frame' id = 'learn_topic' style='display: none;'>
+
+    <div class='title-top'>
+      <h1>Learning topics</h1>
+    </div>
+
+    <div class='flex_parent_column'>
+      <div class="center_children_div learning_topics margin_top_34" id = 'topic1'>
+        <h2>How AC Works</h2>
+        <p class="p2">Assigned to your teammate</p>
+      </div>
+
+      <div class="center_children_div learning_topics margin_top_34" id = 'topic2'>
+        <h2>Molecule Movement</h2>
+        <p class="p2">Assigned to your teammate</p>
+      </div>
+
+      <div class="center_children_div learning_topics margin_top_34" id = 'topic3'>
+        <h2>Ideal Gas Equation</h2>
+        <p class="p2">Assigned to you!</p>
+        <p class="caption">You will be an expert in this topic and teach your peers</p>
+      </div>
+    </div>
+
+
+
+    <div class='flex_parent margin_top_34'>
+        <button onclick='change_to_first_video()' class='main-btn'><span>Next</span></button>
+    </div>
+
+  </div>
+
+  <!--Video-->
+  <div class='changing_frame' id = 'first_video' style='display: none;'>
+
+    <div class='title-top'><h1>What is ideal gas equation?</h1></div>
+    <p class="p2 center_children margin_top_16">Part 3/3</p>
+    <iframe class = "margin_top_16" src="https://www.youtube.com/embed/HpyNmZ8vFMc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <div class='flex_parent margin_top_34'><button onclick='change_to_first_quiz()' class='main-btn'><span>Next</span></button></div>
+  </div>
+
+
+  <!--the expert vetting page-->
+  <div class='changing_frame' id = 'first_quiz' style='display: none;'>
+    <h1> Quiz: Ideal Gas Equation </h1>
+    <br>
+    <br>
+    <br>
+    <div class='quiz'>
+    <!--first question-->
+    <div class="first_quiz">
+      <h3>What is ideal gas equation?</h3>
+        <div class="p2">
+          <input type='radio' id='first_quiz_A' name="first_quiz" onClick='first_quiz_A()'><span> A. P=RT</span></button></br>
+          <input type='radio' id='first_quiz_B' name="first_quiz" onClick='first_quiz_B()'><span> B. PV=nRT</span></button></br>
+          <input type='radio' id='first_quiz_C' name="first_quiz" onClick='first_quiz_C()'><span> C. V=PR/nT</span></button></br>
+          <input type='radio' id='first_quiz_D' name="first_quiz" onClick='first_quiz_D()'><span> D. TV=nPR</span></button></br>
+        </div>
+
+        <div id="first_correct_fb" style='display: none;'>
+          <div class='flex_parent_column margin_top_16'>
+            <div class = 'center_children_div fb_correct margin_top_16'>
+              <div class='flex_left_align'><img class = 'sm_icon' src="images/check_circle_24px_rounded.png"><h3 class="margin-left-5">Correct!</h3></div>
+              <p class="p2 margin-left-30">Ideal Gas Equation describes the relationship between pressure, volume, number of molecules, constant and temperature.</p>
+            </div>
+        </div>
+      </div>
+
+        <div id="first_incorrect_fb" style='display: none;'>
+          <div class='flex_parent_column margin_op_16'>
+            <div class = 'center_children_div fb_incorrect margin_top_16'>
+              <div class='flex_left_align'><img class = 'sm_icon' src="images/cancel_24px_rounded.png"><h3 class="margin-left-5">Incorrect!</h3></div>
+              <p class="p2 margin-left-30">Ideal Gas Equation describes the relationship between pressure, volume, number of molecules, constant and temperature. It should be PV=nRT.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+      <br>
+      <br>
+      <br>
+
+    <!--second question-->
+    <div class='second_quiz'>
+      <h3>What do P, V, T mean in Ideal Gas Equation?</h3>
+        <div class="p2">
+          <input type='radio' id='second_quiz_A' name="second_quiz" onClick='second_quiz_A()'><span> A. P is power, V is velocity, T is time</span></button></br>
+          <input type='radio' id='second_quiz_B' name="second_quiz" onClick='second_quiz_B()'><span> B. P is pressure, V is velocity, T is temperature</span></button></br>
+          <input type='radio' id='second_quiz_C' name="second_quiz" onClick='second_quiz_C()'><span> C. P is power, V is volume, T is time</span></button></br>
+          <input type='radio' id='second_quiz_D' name="second_quiz" onClick='second_quiz_D()'><span> D. P is pressure, V is volume, T is temperature</span></button></br>
+        </div>
+
+        <div id="second_correct_fb" style='display: none;'>
+          <div class='flex_parent_column margin_top_16'>
+            <div class = 'center_children_div fb_correct margin_top_16'>
+              <div class='flex_left_align'><img class = 'sm_icon' src="images/check_circle_24px_rounded.png"><h3 class="margin-left-5">Correct!</h3></div>
+              <p class="p2 margin-left-30">P is pressure, V is volume, T is temperature.</p>
+            </div>
+        </div>
+      </div>
+
+        <div id="second_incorrect_fb" style='display: none;'>
+          <div class='flex_parent_column margin_top_16'>
+            <div class = 'center_children_div fb_incorrect margin_top_16'>
+              <div class='flex_left_align'><img class = 'sm_icon' src="images/cancel_24px_rounded.png"><h3 class="margin-left-5">Incorrect!</h3></div>
+              <p class="p2 margin-left-30">P is pressure, V is volume, T is temperature. It should be D.</p>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <!--third question-->
+    <div class='third_quiz'>
+      <h3>Compressor can compress the refrigerant gas and change the temperature. Please use Ideal Gas Equation to explain it.</h3>
+        <div class="p2">
+          <input type='radio' id='third_quiz_A' name="third_quiz" onClick='third_quiz_A()'><span> A. The pressure increases, which makes the temperature get higher</span></button></br>
+          <input type='radio' id='third_quiz_B' name="third_quiz" onClick='third_quiz_B()'><span> B. The pressure decreases, which makes the temperature get lower</span></button></br>
+          <input type='radio' id='third_quiz_C' name="third_quiz" onClick='third_quiz_C()'><span> C. The temperature decreases, which makes the pressure get higher</span></button></br>
+          <input type='radio' id='third_quiz_D' name="third_quiz" onClick='third_quiz_D()'><span> D. The temperature increases, which makes the pressure get lower</span></button></br>
+        </div>
+
+        <div id="third_correct_fb" style='display: none;'>
+          <div class='flex_parent_column margin_top_16'>
+            <div class = 'center_children_div fb_correct margin_top_16'>
+              <div class='flex_left_align'><img class = 'sm_icon' src="images/check_circle_24px_rounded.png"><h3 class="margin-left-5">Correct!</h3></div>
+              <p class="p2 margin-left-30">Compress means compress the volume and increases the pressure. According to Idea Gas Equation, PV=nRT, when P increases, T goes up.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="third_incorrect_fb" style='display: none;'>
+      <div class='flex_parent_column margin_top_16'>
+        <div class = 'center_children_div fb_incorrect margin_top_16'>
+          <div class='flex_left_align'><img class = 'sm_icon' src="images/cancel_24px_rounded.png"><h3 class="margin-left-5">Incorrect!</h3></div>
+          <p class="p2 margin-left-30">Compress means compress the volume and increases the pressure. According to Idea Gas Equation, PV=nRT, when P increases, T goes up. It should be A.</p>
+        </div>
+    </div>
+</div>
+</div>
+    <br>
+    <br>
+    <br>
+
+
+    <div class='flex_parent margin_top_34' id='submit'><button onclick='check_first_quiz_answer(); check_second_quiz_answer(); check_third_quiz_answer(); quiz_submit();' class='main-btn'><span>Submit</span></button></div>
+
+    <div class='flex_parent margin_top_34'>
+      <button onclick='change_to_team_assign()' id='next' style='display: none;' class='main-btn'><span>Next</span></button>
+    </div>
+
+  </div>
+</div>
+
+
+  <!--Assigning Team-->
+  <div class='changing_frame' id = 'team_assign' style='display: none;'>
+    <div class='title-mid'>
+        <h1>Team Assignment for </h1>
+        <h1>How Air Conditioner Works</h1>
+    </div>
+
+    <div class='name_parent flex_parent_column'>
+      <p class='p1 center_children'>Team assigned!</p>
+      <div class="flex_parent margin_top_34">
+        <div class='name_tag' id = 'name_tag1'><h3>Anonymous Bear</h3></div>
+        <div class='name_tag' id = 'name_tag2'><h3>Anonymous Dragon</h3></div>
+        <div class='name_tag' id = 'name_tag3'><h3 id = 'myName'>Yu Zhao</h3></div>
+      </div>
+
+    </div>
+
+    <div class='flex_parent margin_top_34'>
+      <button onclick='change_to_first_doc()' class='main-btn'><span>Get Started</span></button>
+    </div>
+
+  </div>
+
+  <!--Google Discussion 1-->
+  <div class='changing_frame' id = 'dis_1' style='display: none;'>
+      <div class='title-top margin_top_16'><h1>Learning from your peer: How AC works?</h1></div>
+
+      <div class='flex_parent_column margin_top_16'>
+        <div class = 'center_children_div'><span class="p2">Time left = </span><span id="timer1" class="p2"></span></div>
+        <div class = 'center_children_div discuss_guide margin_top_16'>
+          <div class='flex_left_align'><img class = 'sm_icon' src="images/info_24px_rounded.png"><h3 class="margin-left-5">How to discuss?</h3></div>
+
+          <p class="p2 margin-left-30">Fill in the google doc with the questions you have.</p>
+          <p class="p2 margin-left-30">Your peer will teach you by answering these questions.</p>
+          <p class="p2 margin-left-30">Anonymous Bear will teach Anonymous Dragon and <span id = 'doc1_name'></span></p>
+        </div>
+
+
+        <button class='sec-btn margin_top_34 center_children_div'><span onClick="window.open('https://docs.google.com/document/d/1cxcgUKemhq9WgRky9TOL5cVy5Ek-KR0uh64gAeGdCDc/edit?usp=sharing', '_blank')">Open Link In a Browser</span></button>
+      </div>
+
+      <iframe class = 'margin_top_34' src="https://docs.google.com/document/d/e/2PACX-1vQeRGGYYaeK27YU3NHsetLej9fzHFh3kiDvZDKZa-iMw81Cp83SfOJ6XmWc8S5jibQwnQqKleaCfHju/pub?embedded=true"></iframe>
+
+      <div class='flex_parent margin_top_34'><button onclick='change_to_second_doc()' class='main-btn'><span>Next</span></button></div>
+  </div>
+
+  <!--Google Discussion 2-->
+  <div class='changing_frame' id = 'dis_2' style='display: none;'>
+      <div class='title-top margin_top_16'><h1>Learning from your peer: Molecule movement?</h1></div>
+
+
+      <div class='flex_parent_column margin_top_16'>
+        <div class = 'center_children_div'><span class="p2">Time left = </span><span id="timer2" class="p2"></span></div>
+        <div class = 'center_children_div discuss_guide margin_top_16'>
+          <div class='flex_left_align'><img class = 'sm_icon' src="images/info_24px_rounded.png"><h3 class="margin-left-5">How to discuss?</h3></div>
+
+          <p class="p2 margin-left-30">Fill in the google doc with the questions you have.</p>
+          <p class="p2 margin-left-30">Your peer will teach you by answering these questions.</p>
+          <p class="p2 margin-left-30">Anonymous Dragon will teach Anonymous Bear and <span id = 'doc2_name'></span></p>
+        </div>
+
+
+        <button class='sec-btn margin_top_34 center_children_div'><span onClick="window.open('https://docs.google.com/document/d/1wWgv-rs-JVHpmNYPCGWqEQyFu-3GL4Pbo4yxNRBZVeA/edit?usp=sharing', '_blank')">Open Link In a Browser</span></button>
+      </div>
+
+
+      <iframe class = 'margin_top_34' src="https://docs.google.com/document/d/e/2PACX-1vTlOsfoG3jzyT3Fnbdoaz5ToxQu5N07c0k8isUUaRNXzgLWvYKOdhWmUclY8lI8G6EZMtNPQ6z99Yss/pub?embedded=true"></iframe>
+
+      <div class='flex_parent margin_top_34'><button onclick='change_to_third_doc()' class='main-btn'><span>Next</span></button></div>
+  </div>
+
+  <!--Google Discussion3 -->
+  <div class='changing_frame' id = 'dis_3' style='display: none;'>
+
+      <div class='title-top margin_top_16'><h1>Now, it’s time to share your knowledge on ideal gas equation!</h1></div>
+
+
+      <div class='flex_parent_column margin_top_16'>
+        <div class = 'center_children_div'><span class="p2">Time left = </span><span id="timer3" class="p2"></span></div>
+        <div class = 'center_children_div discuss_guide margin_top_16'>
+          <div class='flex_left_align'><img class = 'sm_icon' src="images/info_24px_rounded.png"><h3 class="margin-left-5">How to discuss?</h3></div>
+
+          <p class="p2 margin-left-30">Fill in the google doc with the questions you have.</p>
+          <p class="p2 margin-left-30">Your peer will teach you by answering these questions.</p>
+          <p class="p2 margin-left-30"><span id = 'doc3_name'></span> will teach Anonymous Dragon and Anonymous Bear</p>
+        </div>
+
+
+        <button class='sec-btn margin_top_34 center_children_div'><span onClick="window.open('https://docs.google.com/document/d/1TWCd-MZWSZNC-OmiwxP-Y6RoppACuO0_B8rZmPAvIAg/edit?usp=sharing', '_blank')">Open Link In a Browser</span></button>
+      </div>
+
+      <iframe class = 'margin_top_34' src="https://docs.google.com/document/d/e/2PACX-1vSbduySdBO4zw7H8YOKlACenSVdQagymHcxKWxE8qk2rgfUA0gic37c2iqEk1bLXEWAnOf4IiuuYZXo/pub?embedded=true"></iframe>
+
+      <div class='flex_parent margin_top_34'><button onclick='change_to_post_test()' class='main-btn'><span>Next</span></button></div>
+  </div>
+
+  <!--@Ruwen, post test is also here-->
+  <div class='changing_frame' id = 'post_assess' style='display: none;'>
+     <h1> Final Test </h1><br><br><br>
+     <div class='quiz'>
+     <!--first question-->
+     <h3>What air does the compressor emit?</h3>
+      <div class="p2">
+          <input type="radio" name="question1" value="A">Cold air<br>
+          <input type="radio" name="question1" value="B">Hot air<br>
+          <input type="radio" name="question1" value="C">Hot Liquid<br>
+          <input type="radio" name="question1" value="D">Cold Liquid<br>
+       </div>
+       <br>
+       <br>
+       <br>
+
+       <h3>What air does the evaporator emit?</h3>
+        <div class="p2">
+         <input type="radio" name="question2" value="A">Hot air<br>
+         <input type="radio" name="question2" value="B">Cold air<br>
+         <input type="radio" name="question2" value="C">Hot Liquid<br>
+         <input type="radio" name="question2" value="D">Cold Liquid<br>
+        </div>
+        <br>
+        <br>
+        <br>
+
+       <h3>What does the condenser emit?</h3>
+        <div class="p2">
+          <input type="radio" name="question3" value="A">Hot Liquid<br>
+          <input type="radio" name="question3" value="B">Cold Air<br>
+          <input type="radio" name="question3" value="C">Hot Air<br>
+          <input type="radio" name="question3" value="D">Cold Liquid<br>
+        </div>
+        <br>
+        <br>
+        <br>
+
+        <h3>How does the volume change when pressure goes up?</h3>
+        <div class="p2">
+          <input type="radio" name="question4" value="A">It will rise<br>
+          <input type="radio" name="question4" value="B">It will decrease<br>
+          <input type="radio" name="question4" value="C">It will rise then increase<br>
+          <input type="radio" name="question4" value="D">It will not be affected<br>
+        </div>
+        <br>
+        <br>
+        <br>
+
+        <h3>How does the temperature change when pressure goes up? (volume is constant)</h3>
+        <div class="p2">
+          <input type="radio" name="question5" value="A">It will decrease<br>
+          <input type="radio" name="question5" value="B">It will increase<br>
+          <input type="radio" name="question5" value="C">It will decrease then increase<br>
+          <input type="radio" name="question5" value="D">It will not be affected<br>
+        </div>
+        <br>
+        <br>
+        <br>
+
+        <h3>How does the ambient temperature change when a liquid becomes a gas?</h3>
+        <div class="p2">
+          <input type="radio" name="question6" value="A">It will rise<br>
+          <input type="radio" name="question6" value="B">It will decrease<br>
+          <input type="radio" name="question6" value="C">It will rise then increase<br>
+          <input type="radio" name="question6" value="D">It will not be affected<br>
+        </div>
+        <br>
+        <br>
+        <br>
+
+        <h3>How does molecule movement change when temperature goes up?</h3>
+        <div class="p2">
+          <input type="radio" name="question7" value="A">It will get fast<br>
+          <input type="radio" name="question7" value="B">It will get slow<br>
+          <input type="radio" name="question7" value="C">It will get slow then fast<br>
+          <input type="radio" name="question7" value="D">It will not be affected<br>
+        </div>
+        <br>
+        <br>
+        <br>
+
+        <h3>Does heat need when changing liquid to gas?</h3>
+        <div class="p2">
+          <input type="radio" name="question8" value="A">No, it releases the heat<br>
+          <input type="radio" name="question8" value="B">No, it generates the light<br>
+          <input type="radio" name="question8" value="C">Yes, it absorbs the heat<br>
+          <input type="radio" name="question8" value="D">It is not related to the heat<br>
+        </div>
+        <br>
+        <br>
+        <br>
+
+        <h3>Air conditioners use the principle of (    ) the ambient temperature by absorbing heat when the (    ) refrigerant changes its state to gas. Please choose the best answers to the blank.</h3>
+        <div class="p2">
+          <input type="radio" name="question9" value="A">rising, liquid<br>
+          <input type="radio" name="question9" value="B">rising, gases<br>
+          <input type="radio" name="question9" value="C">lowering, liquid<br>
+          <input type="radio" name="question9" value="D">lowering, gases<br>
+        </div>
+        <br>
+        <br>
+        <br>
+
+      <div class='flex_parent margin_top_34' id='submit'><button onclick='change_to_final_score()' class='main-btn'><span>Submit</span></button></div>
+  </div>
+</div>
+
+  <!--final score-->
+  <div class='changing_frame' id = 'final_score' style='display: none;'>
+
+    <div class='title-mid'>
+      <h1>Congratulations!</h1>
+    </div>
+
+    <div class='name_parent flex_parent_column'>
+      <p class='p1 center_children'>Your Team score: 80/100</p>
+      <p class='p1 center_children'>It is the average of the other two students’ score and yours</p>
+
+      <div class="flex_parent margin_top_34">
+        <div class='name_tag' id = 'name_tag1'><h3>Anonymous Bear</h3></div>
+        <div class='name_tag' id = 'name_tag2'><h3>Anonymous Dragon</h3></div>
+        <div class='name_tag' id = 'name_tag3'><h3 id = 'myName2'>Yu Zhao</h3></div>
+      </div>
+
+      <h2 class="center_children black-h2 margin_top_34">You all did a great job! </h2>
+    </div>
+
+    <div class='flex_parent margin_top_34'>
+      <button class='main-btn'><span>Cheers</span></button>
+    </div>
+  </div>
+
+
+  <script src = 'js/main.js'></script>
+</body>
+
+<footer>
+</footer>
