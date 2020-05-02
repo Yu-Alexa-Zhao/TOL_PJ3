@@ -2,7 +2,7 @@ let csvfile = [], counter = 1, l, arrayofcorrect, question_ids = [], arrayofinco
 let choiceA, choiceB, choiceC, choiceD;
 
 $(document).ready(function() {
-d3.csv("../js/data.csv", function(data){
+d3.csv("/TOL_PJ3/js/data.csv", function(data){
 		csvfile=data
 		//console.log(csvfile);
 });
