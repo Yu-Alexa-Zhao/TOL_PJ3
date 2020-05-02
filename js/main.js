@@ -2,14 +2,14 @@ let csvfile = [], counter = 1, l, arrayofcorrect, question_ids = [], arrayofinco
 let choiceA, choiceB, choiceC, choiceD;
 
 $(document).ready(function() {
-d3.csv("/js/data.csv", function(data){
+d3.csv("../js/data.csv", function(data){
 		csvfile=data
 		//console.log(csvfile);
 });
 });
 
 function randChoice(){
-	if(exclude.length == 3 && exclude.some(r=> arrayofcorrect[counter-1].includes(r))==false)
+	if(exclude.length >= 3 && exclude.some(r=> arrayofcorrect[counter-1].includes(r))==false)
 	{
 		console.log("success");
 		var randCh = arrayofcorrect[counter-1][Math.floor(Math.random() * arrayofcorrect[counter-1].length)];
@@ -22,6 +22,10 @@ function randChoice(){
 		exclude = [];
 	}
 	else {
+		if(exclude.length >= 3)
+		{
+			exclude = [];
+		}
 		console.log(exclude.some(r=> arrayofcorrect[counter-1].includes(r)));
 		console.log(exclude);
 		var randCh = arrayofcorrect[counter-1].concat(arrayofincorrect[counter-1])[Math.floor(Math.random() * arrayofcorrect[counter-1].concat(arrayofincorrect[counter-1]).length)];
@@ -49,16 +53,16 @@ function to_q1(){
 	    if(csvfile[i].option=="correct")
 			{
 				//console.log(csvfile[i].Answer_text);
-				arrayofcorrect[csvfile[i].Question_id-1].push(csvfile[i].Answer_text);
+				arrayofcorrect[csvfile[i].Question_id-Math.min(...question_ids)].push(csvfile[i].Answer_text);
 			}
 			if(csvfile[i].option=="incorrect")
 			{
 				//console.log(csvfile[i].Question_id, csvfile[i].Answer_text);
-				arrayofincorrect[csvfile[i].Question_id-1].push(csvfile[i].Answer_text);
+				arrayofincorrect[csvfile[i].Question_id-Math.min(...question_ids)].push(csvfile[i].Answer_text);
 			}
 	}
-	// console.log(arrayofcorrect);
-	// console.log(arrayofincorrect);
+	console.log(arrayofcorrect);
+	console.log(arrayofincorrect);
 	var welcome = document.getElementById('welcome');
 	welcome.style.display = 'none';
 
@@ -229,5 +233,6 @@ function retry() {
 	document.getElementById('submit').style.display='block';
 	document.getElementById('next').style.display='none';
 	document.getElementById('retry_1').style.display='none';
+	document.getElementById("first_correct_fb").style.display='none';
 	document.getElementById("first_incorrect_fb").style.display='none';
 }
